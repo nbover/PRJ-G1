@@ -1,0 +1,50 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  background-image: url(../imatges/fondo.png);
+  font-family:Verdana;
+  background-size: cover;
+}
+
+.menu {
+  float:left;
+  width:20%;
+  text-align:center;
+  padding:0 20px;
+}
+.menu a {
+  background-color:#e5e5e5;
+  padding:8px;
+  margin-top:7px;
+  display:block;
+  width:100%;
+  color:black;
+}
+.main {
+  float:left;
+  width:60%;
+  padding:0 20px;
+}
+.right {
+  float:left;
+  width:20%;
+  text-align:center;
+}
+
+.footer{
+  background-color:#e5e5e5;
+  text-align:center;
+  padding:10px;
+  margin-top:7px;
+  border-radius: 50px;
+}
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width:100%;
+  }
+}

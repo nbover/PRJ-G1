@@ -7,7 +7,7 @@
 <body>
 
 <div style="padding:15px;text-align:center;">
-  <img src="imatges/logo1.png" width="200px"><h1 style="color:white;">Uneix-te al deport</h1>
+  <img src="imatges/logo1.png" width="200px"><h1 style="color:white;">Uneix-te a l'esport</h1>
 </div>
 
 <div style="overflow:auto;">
@@ -16,7 +16,6 @@
     <a href="#">Link 2</a>
     <a href="#">Link 3</a>
     <a href="#">Link 4</a>-->
-    sdsdss
   </div>
 
   <div class="main">
@@ -30,12 +29,10 @@
   <div class="right">
   <!--  <h2>About</h2>
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>-->
-    asd
-    asd
   </div>
 </div>
 
-<div class="footer">© 2020 - 2021 - NIMA, SL</div>
+<div class="footer">Ole Ole los caracoles</div>
 
 </body>
 </html>
