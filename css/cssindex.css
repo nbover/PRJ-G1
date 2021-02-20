@@ -8,6 +8,28 @@ body{
   font-family:Verdana;
   background-size: cover;
 }
+.linia{
+animation: colorRotate 7s linear 0s infinite;
+animation-fill-mode: forwards;
+}
+
+@keyframes colorRotate {
+  from {
+    border-bottom: 5px solid #6666ff;
+  }
+  10% {
+    border-bottom: 5px solid #0099ff;
+  }
+  50% {
+    border-bottom: 5px solid #00ff00;
+  }
+  75% {
+    border-bottom: 5px solid #ff3399;
+  }
+  100% {
+    border-bottom: 5px solid #6666ff;
+  }
+}
 
 .menu {
   float:left;
@@ -35,11 +57,10 @@ body{
 }
 
 .footer{
-  background-color:#e5e5e5;
   text-align:center;
   padding:10px;
-  margin-top:7px;
-  border-radius: 50px;
+  margin-top:10px;
+  border-radius: 40px;
 }
 
 @media only screen and (max-width:620px) {
