@@ -13,21 +13,23 @@
 
       function fullname($nom,$llin1,$llin2)
       {
-        echo "$nom $llin1 $llin2";
+        return "$nom $llin1 $llin2";
       }
 
       function llinatges($llin1,$llin2)
       {
-        echo "$llin1 $llin2";
+        return "$llin1 $llin2";
       }
 
-      $llinatges=llinatges($llin1,$llin2);
+
+        $llinatges2= llinatges($llin1,$llin2);
 
       include_once "db_empresa.php";
 
       $con = mysqli_connect($db_host, $db_user, $db_pass, $db_database);
-      $query = "INSERT INTO usuaris (Usuari,Password,Nom,Llinatges,Email,DataN,Sexe) values ($user,$pwd1,$nom,$llinatges,$correu,$data,$gender);";
+      $query = "INSERT INTO usuaris (Usuari,Password,Nom,Llinatges,Email,DataN,Sexe) values ('$user','$pwd1','$nom','$llinatges2','$correu','$data','$gender');";
       $res = mysqli_query($con, $query);
+
 ?>
 <html>
 <head>
