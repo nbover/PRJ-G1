@@ -24,7 +24,7 @@
   </div>
 
     <div class="contenedor">
-			<form method="post" action="" class="form">
+			<form method="post" action="CreacioUsuario.php" class="form">
 				<div class="form-general">
 					<h1 class="form-title">R<span class="titol">egistre </span>D<span class="titol">e </span>U<span class="titol">suari</span></h1>
 
