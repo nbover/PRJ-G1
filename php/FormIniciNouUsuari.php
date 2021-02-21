@@ -32,7 +32,7 @@
             <label class="label" for="">Usuari</label>
           </div>
           <div class="grupo">
-    				<input type="password" name="pwd1" id="password" required><span class="barra"></span>
+    				<input type="password" name="pwd1" id="password" required><span class="barra"></span><button onclick="mostrarContrasena()" style="height: 20px;width: 40%;text-align:center;font-size:15px;">Visualitza</button>
             <label class="label" for="">Password</label>
           </div>
           <div class="grupo">
@@ -81,6 +81,15 @@
 
 <div class="footer">© 2020 - 2021 - NIMA, SL</div>
 
-
+<script>
+  function mostrarContrasena(){
+      var tipo = document.getElementById("password");
+      if(tipo.type == "password"){
+          tipo.type = "text";
+      }else{
+          tipo.type = "password";
+      }
+  }
+</script>
 </body>
 </html>
