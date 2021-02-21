@@ -61,12 +61,18 @@
             <label class="dataN" for="">Data de Naixement</label>
           </div>
           <div class="grupo">
-            <input type="radio" id="male" name="gender" value="Home">
-            <label for="Home">Home</label><br>
-            <input type="radio" id="female" name="gender" value="Dona">
-            <label for="Dona">Dona</label><br>
-            <input type="radio" id="other" name="gender" value="Altre">
-            <label for="Altre">Altre</label>
+            <div class="radio">
+              <input type="radio" id="male" name="gender" value="Home">
+              <label for="Home" >Home</label>
+            </div>
+            <div class="radio">
+              <input type="radio" id="female" name="gender" value="Dona" >
+              <label for="Dona" >Dona</label>
+            </div>
+            <div class="radio">
+              <input type="radio" id="other" name="gender" value="Altre">
+              <label for="Altre" >Altre</label>
+            </div>
           </div>
     			<button type="submit">Login</button>
         </div>
