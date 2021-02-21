@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
   <link rel="shortcut icon" href="../imatges/logoicon.ico">
@@ -24,40 +23,36 @@
   </div>
 
     <div class="contenedor">
-			<form method="post" action="CreacioUsuario.php" class="form">
+			<form method="post" action="CreacioUsuari.php" class="form">
 				<div class="form-general">
 					<h1 class="form-title">R<span class="titol">egistre </span>D<span class="titol">e </span>U<span class="titol">suari</span></h1>
 
           <div class="grupo">
-    				<input type="text" name="" id="name" required><span class="barra"></span>
+    				<input type="text" name="user" id="name" required><span class="barra"></span>
             <label class="label" for="">Usuari</label>
           </div>
           <div class="grupo">
-    				<input type="password" id="password" required><span class="barra"></span>
+    				<input type="password" name="pwd1" id="password" required><span class="barra"></span>
             <label class="label" for="">Password</label>
           </div>
           <div class="grupo">
-    				<input type="password" id="confirm_password" required><span class="barra"></span>
-            <label class="label" for="">Confirmar Password</label>
-          </div>
-          <div class="grupo">
-    				<input type="text" name="" id="name" required><span class="barra"></span>
+    				<input type="text" name="nom" id="name" required><span class="barra"></span>
             <label class="label" for="">Nom</label>
           </div>
           <div class="grupo">
-    				<input type="text" name="" id="name" required><span class="barra"></span>
+    				<input type="text" name="llin1" id="name" required><span class="barra"></span>
             <label class="label" for="">Primer Llinatge</label>
           </div>
           <div class="grupo">
-    				<input type="text" name="" id="name" required><span class="barra"></span>
+    				<input type="text" name="llin2" id="name" required><span class="barra"></span>
             <label class="label" for="">Segon Llinatge</label>
           </div>
           <div class="grupo">
-    				<input type="email" name="" id="name" required><span class="barra"></span>
+    				<input type="email" name="correu" id="name" required><span class="barra"></span>
             <label class="label" for="">Email</label>
           </div>
           <div class="grupo">
-    				<input type="date" name="" id="name" required><span class="barra"></span>
+    				<input type="date" name="data" id="name" required><span class="barra"></span>
             <label class="dataN" for="">Data de Naixement</label>
           </div>
           <div class="grupo">
@@ -76,15 +71,11 @@
           </div>
     			<button type="submit">Sign Up</button>
         </div>
-
 			</form>
     </div>
-
-
-  <div class="right">
+    <div class="right">
   <!--  <h2>About</h2>
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>-->
-
   </div>
 </div>
 
