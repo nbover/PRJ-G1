@@ -11,7 +11,7 @@
 <body>
 
 <div style="padding:15px;text-align:center;">
-  <img src="imatges/logo1.png" width="200px"><h4 style="color:white;"><span class="linia">Uneix-te al deport</span></h4>
+  <a href=""><img src="imatges/logo1.png" width="200px"></a><h4 style="color:white;"><span class="linia">Uneix-te al deport</span></h4>
 </div>
 
 <div style="overflow:auto;">
@@ -27,17 +27,17 @@
     <div class="row">
       <div class="col s12">
         <div class="carousel center-align">
-          <div class="carousel-item"><a href="">
+          <div class="carousel-item"><a href="php/FormIniciAdmin.php">
             <p class="Tusuario">Administrador</p>
             <img src="imatges/UsuarioAdmin.png">
           </a></div>
 
-          <div class="carousel-item"><a href="">
+          <div class="carousel-item"><a href="php/FormIniciUsuari.php">
             <p class="Tusuario">Usuari Registrat</p>
             <img src="imatges/Usuario.png">
           </a></div>
 
-          <div class="carousel-item"><a href="">
+          <div class="carousel-item"><a href="php/FormIniciNouUsuari.php">
             <p class="Tusuario">Nou Usuari</p>
             <img src="imatges/UsuarioNuevo.png">
           </a></div>
@@ -49,7 +49,7 @@
   <div class="right">
   <!--  <h2>About</h2>
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>-->
-    
+
   </div>
 </div>
 
