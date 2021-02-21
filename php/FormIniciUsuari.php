@@ -5,7 +5,7 @@
   <title>Nima Deports</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Raleway:500,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="..\css\FormIniciAdmin.css">
+  <link rel="stylesheet" type="text/css" href="..\css\FormIniciAdminn.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
 </head>
 <body>
