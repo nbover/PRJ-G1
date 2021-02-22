@@ -25,7 +25,7 @@
   </div>
 
     <div class="contenedor">
-			<form method="post" action="" class="form">
+			<form method="post" action="AdminPagina.php" class="form">
 				<div class="form-general">
 					<h1 class="form-title">A<span class="titol">dministrador</span></h1>
 

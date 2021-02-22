@@ -25,7 +25,7 @@
   </div>
 
     <div class="contenedor">
-			<form method="post" action="" class="form">
+			<form method="post" action="UsuarisPagina.php" class="form">
 				<div class="form-general">
 					<h1 class="form-title">U<span class="titol">suari</span></h1>
 

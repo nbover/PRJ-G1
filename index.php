@@ -33,15 +33,21 @@
             <img src="imatges/UsuarioAdmin.png">
           </a></div>
 
-          <div class="carousel-item"><a href="php/FormIniciUsuari.php">
-            <p class="Tusuario">Usuari Registrat</p>
-            <img src="imatges/Usuario.png">
+          <div class="carousel-item"><a href="php/UsuarisNoRegPagina.php">
+            <p class="Tusuario">Usuari no Registrat</p>
+            <img src="imatges/UsuarioNoReg.png">
           </a></div>
 
           <div class="carousel-item"><a href="php/FormIniciNouUsuari.php">
             <p class="Tusuario">Nou Usuari</p>
             <img src="imatges/UsuarioNuevo.png">
           </a></div>
+
+          <div class="carousel-item"><a href="php/FormIniciUsuari.php">
+            <p class="Tusuario">Usuari Registrat</p>
+            <img src="imatges/UsuarioV.png">
+          </a></div>
+
         </div>
       </div>
     </div>
