@@ -27,8 +27,14 @@
       include_once "db_empresa.php";
 
       $con = mysqli_connect($db_host, $db_user, $db_pass, $db_database);
-      $query = "INSERT INTO usuaris (Usuari,Password,Nom,Llinatges,Email,DataN,Sexe) values ('$user','$pwd1','$nom','$llinatges2','$correu','$data','$gender');";
-      $res = mysqli_query($con, $query);
+
+      $query_select = "select * from usuaris where Usuari = '$user'";
+      $result_select = $con->query($query_select);
+      $usuari_existent = $result_select->fetch_object();
+
+
+
+
 
 ?>
 <html>
@@ -54,24 +60,48 @@
     <a href="#">Link 4</a>-->
 
   </div>
-
+  <?php
+    if($usuari_existent != null){
+   ?>
     <div class="contenedor">
-			<form method="post" action="FormIniciUsuari.php" class="form">
+			<form method="post" action="FormIniciNouUsuari.php" class="form">
 				<div class="form-general">
 					<h1 class="form-title">I<span class="titol">nfo </span>D<span class="titol">el </span>R<span class="titol">egistre</span></h1>
           <div style="text-align: center;font-size:20px;">
+            <br><p style="color: red;">XXXXXXXXXXXXXXXXXXXXX </p><p>L'Usuari <b><?php echo $user ?></b> ja existeix. <p style="color: red;">XXXXXXXXXXXXXXXXXXXXX </p><br> 
+        </div>
+        <button type="submit">Retornar al Formulari</button>
+       </div>
+    </form>
+   </div>
+      <?php
+          }else{
+      ?>
+    <div class="contenedor">
+  		<form method="post" action="FormIniciUsuari.php" class="form">
+  			<div class="form-general">
+  				<h1 class="form-title">I<span class="titol">nfo </span>D<span class="titol">el </span>R<span class="titol">egistre</span></h1>
+          <div style="text-align: center;font-size:20px;">
           <?php
+          $query = "INSERT INTO usuaris (Usuari,Password,Nom,Llinatges,Email,DataN,Sexe) values ('$user','$pwd1','$nom','$llinatges2','$correu','$data','$gender');";
+          $res = mysqli_query($con, $query);
+
           echo "<br><br><b>Benvingut a NIMA<br></b>";
           echo fullname($nom,$llin1,$llin2);
           echo "<br>";
           echo "<br>";
           echo "<b>El teu usuari és: </b><br>".$user." <br><br><br>";
-           ?>
+
+
+          ?>
          </div>
     			<button type="submit">Iniciar Sesió</button>
         </div>
 			</form>
     </div>
+    <?php
+      }
+     ?>
     <div class="right">
   <!--  <h2>About</h2>
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>-->
