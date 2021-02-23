@@ -1,4 +1,8 @@
-
+<?php
+session_start();
+$_SESSION['nom']=null;
+$_SESSION['contra']=null;
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
