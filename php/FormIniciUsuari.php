@@ -1,4 +1,50 @@
+<?php
 
+  if(isset($_POST['submit']))
+  {
+
+    $user = $_POST['user'];
+    $pw = $_POST['password'];
+
+    include_once "db_empresa.php";
+
+    $db = new mysqli($db_host, $db_user, $db_pass, $db_database);
+    $sql = "select Usuari from usuaris where Usuari = '$user'";
+    $resultat = $db->query($sql);
+    while($row = $resultat->fetch_assoc()){
+      $var = $row["Usuari"];
+
+    }
+    $sql = "select Password from usuaris where Usuari = '$user'";
+    $resultat = $db->query($sql);
+    while($row = $resultat->fetch_assoc()){
+      $var2 = $row["Password"];
+
+    }
+error_reporting(E_ALL ^ E_NOTICE);
+
+    if($var !== $user){
+      echo '<script type="text/javascript">
+      alert("El Usuari introduït no existeix");
+      </script>';
+
+    }elseif ($var2 !== $pw) {
+      echo '<script type="text/javascript">
+      alert("La contrasenya no concideix amb el usuari introduït");
+      </script>';
+    }else{
+      session_start();
+      $_SESSION['usuari_login'] = "existeix";
+      $_SESSION['user'] = $user;
+      header('Location: UsuarisPagina.php');
+    }
+
+
+
+
+
+  }
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,19 +71,19 @@
   </div>
 
     <div class="contenedor">
-			<form method="post" action="UsuarisPagina.php" class="form">
+			<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="form">
 				<div class="form-general">
 					<h1 class="form-title">U<span class="titol">suari</span></h1>
 
           <div class="grupo">
-    				<input type="text" name="" id="name" required><span class="barra"></span>
+    				<input type="text" name="user" id="name" required><span class="barra"></span>
             <label for="">Usuari</label>
           </div>
           <div class="grupo">
-    				<input type="password" name="" id="name" required><span class="barra"></span>
+    				<input type="password" name="password" id="name" required><span class="barra"></span>
             <label for="">Password</label>
           </div>
-    			<button type="submit">Login</button>
+    			<button type="submit" name="submit">Login</button>
         </div>
 
 			</form>
