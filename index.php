@@ -1,7 +1,7 @@
 <?php
 session_start();
-$_SESSION['nom']=null;
-$_SESSION['contra']=null;
+$_SESSION['usuari_login']=null;
+$_SESSION['usuari_login2']=null;
  ?>
 <!DOCTYPE html>
 <html>

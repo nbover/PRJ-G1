@@ -39,15 +39,7 @@ animation: colorRotate 10s linear 0s infinite;
   background: #fff;
   box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
   border-radius: 10px;
-}/*
-.menu a {
-  background-color:#e5e5e5;
-  padding:8px;
-  margin-top:7px;
-  display:block;
-  width:100%;
-  color:black;
-}*/
+}
 
 .button {
   background-color: #4CAF50; /* Green */

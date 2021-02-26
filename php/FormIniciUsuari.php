@@ -34,8 +34,8 @@ error_reporting(E_ALL ^ E_NOTICE);
       </script>';
     }else{
       session_start();
-      $_SESSION['usuari_login'] = "existeix";
-      $_SESSION['user'] = $user;
+      $_SESSION['usuari_login2'] = "existeix";
+      $_SESSION['user2'] = $user;
       header('Location: UsuarisPagina.php');
     }
 
