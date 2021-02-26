@@ -1,7 +1,11 @@
 <?php
 session_start();
 $existent=$_SESSION['usuari_login'];
-$user=$_SESSION['user'];
+
+if (isset($_SESSION['user'])) {
+  $user=$_SESSION['user'];
+}
+
 
 if ($existent=='existeix') {
 ?>
