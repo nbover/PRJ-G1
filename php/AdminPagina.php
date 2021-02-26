@@ -24,26 +24,28 @@ if ($existent=='existeix') {
 </div>
 
 <div style="overflow:auto;">
-  <div class="menu">
+  <div class="top">
     <div><a href="../index.php"><button class="button2">Benvingut <?php echo $user; ?> <b>Log Out</b></button></a></div>
-    <!--POSAR FORMULARI AMB IMATGES MIAM QUE TAL-->
+  </div>
+  <div class="menu"></div>
+  <div class="menu">
     <div>
-        <img src="../imatges/pantalones.jpg" width="10%" style="border-radius:50px;border: 1px solid black;">
-        <img src="../imatges/pantalones.jpg" width="10%" style="border-radius:50px;border: 1px solid black;">
-        <img src="../imatges/pantalones.jpg" width="10%" style="border-radius:50px;border: 1px solid black;">
-        <img src="../imatges/pantalones.jpg" width="10%" style="border-radius:50px;border: 1px solid black;">
-        <img src="../imatges/pantalones.jpg" width="10%" style="border-radius:50px;border: 1px solid black;">
+      <h1>Insert</h1>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+      <img src="../imatges/logo1.png" width="50%"><img src="../imatges/logo1.png" width="50%">
     </div>
-    <div></div>
   </div>
 
   <div class="main">
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+    <h1>Productes</h1>
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
     <img src="../imatges/logo1.png" width="50%"><img src="../imatges/logo1.png" width="50%">
   </div>
+  <div class="right"></div>
 </div>
 
 <div class="footer">© 2020 - 2021 - NIMA, SL</div>
@@ -68,7 +70,7 @@ if ($existent=='existeix') {
 </div>
 
 <div style="overflow:auto;">
-  <div class="main" style="min-width: 60%;">
+  <div class="main2">
     <h2 style="text-align:center; padding-top:30px">No has iniciat sesió en aquesta pàgina, Retorna a l'inici </h2>
     <div align="center"><img src="../imatges/logoicon.png" width="20%" style="margin:auto"></div>
     <br>

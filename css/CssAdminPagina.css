@@ -32,15 +32,74 @@ animation: colorRotate 10s linear 0s infinite;
 }
 
 .menu {
-  margin: auto;
+  float:left;
+  width:18%;
+  text-align:center;
+  padding:0 20px;
+  margin: 1%;
+  background: #fff;
+  box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+.top {
   width:60%;
   text-align:center;
   padding:0 20px;
+  margin: auto;
+  background: #fff;
+  box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+.menu a {
+  background-color:#e5e5e5;
+  padding:8px;
+  margin-top:7px;
+  display:block;
+  width:100%;
+  color:black;
+}
+.main {
+  float:left;
+  width:38%;
+  padding:0 20px;
+  margin: 1%;
   background: #fff;
   box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
   border-radius: 10px;
 }
 
+.main2 {
+  margin: auto;
+  width:70%;
+  background: #fff;
+  box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+
+.right {
+  float:left;
+  width:18%;
+  padding:0 20px;
+  text-align:center;
+  margin: 1%;
+  background: #fff;
+  box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+
+.footer{
+  text-align:center;
+  padding:10px;
+  margin-top:10px;
+  border-radius: 40px;
+}
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width:100%;
+  }
+}
 .button {
   background-color: #4CAF50; /* Green */
   border: none;
@@ -89,60 +148,4 @@ animation: colorRotate 10s linear 0s infinite;
   background-color: white;
   color: black;
   border: 2px solid #555555;
-}
-
-.rotlos{
-  border: 2px solid orange;
-  width:20%;
-  height: 20%;
-}
-
-.main {
-  margin: auto;
-  width:70%;
-  background: #fff;
-  box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
-}
-.right {
-  float:left;
-  width:20%;
-  text-align:center;
-}
-
-.footer{
-  text-align:center;
-  padding:10px;
-  margin-top:10px;
-  border-radius: 40px;
-}
-
-@media only screen and (max-width:620px) {
-  /* For mobile phones: */
-  .menu, .main, .right {
-    width:100%;
-  }
-}
-
-.button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-}
-
-.button1 {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-
-.button2:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
