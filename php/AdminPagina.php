@@ -54,7 +54,7 @@ if ($existent=='existeix') {
   <link rel="shortcut icon" href="../imatges/logoicon.ico">
   <title>Nima Deports</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="..\css\CssAdminPagina.css">
+  <link rel="stylesheet" type="text/css" href="..\css\CssAdminPagina2.css">
 
 </head>
 <body>
@@ -63,7 +63,7 @@ if ($existent=='existeix') {
   <a href=""><img style="margin-left:-5%;" src="../imatges/logo1.png" width="200px"></a><h1 style="color:white;"><span class="linia">Administració productes</span></h1>
 </div>
 
-<div style="overflow:auto;">
+<div>
   <div class="top">
     <div><button class="button3" disabled>Benvingut <b><?php echo $user; ?></b></button> </div>
   </div>
@@ -115,9 +115,18 @@ if ($existent=='existeix') {
       <h4 class="form-title">F<span class="titol">iltre</span></h4>
       <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"  >
           <label  for="">Producte</label>
-          <input type="text" name="tipus" style="max-width: 15%;">
+          <select  name="tipus" style="width: 15%;">
+            <option value=""></option>
+            <option value="Deportives">Deportives</option>
+            <option value="Calçons">Calçons</option>
+            <option value="Sudaderes">Sudaderes</option>
+          </select>
           <label  for="">Genere</label>
-          <input type="text" name="genere" style="max-width: 15%;">
+          <select  name="genere" style="width: 15%;">
+            <option value=""></option>
+            <option value="Home">Home</option>
+            <option value="Dona">Dona</option>
+          </select>
           <label  for="">Talla</label>
           <input type="text" name="talla" style="max-width: 15%;">
           <label  for="">Color</label>
@@ -127,34 +136,49 @@ if ($existent=='existeix') {
       </div>
 <?php
 
-$color = 'Color';
-$talla = 'Talla';
-$genere = 'Genere';
-$tipus = 'Producte';
+
+
+
 
   if(isset($_POST['submitFiltre'])){
-    if($_POST['tipus']){
-      $tipus = $_POST['tipus'];
+    if(empty($_POST['tipus'])){
+      $limit = "Producte = Producte";
+    }else {
+
+      $tipusF = $_POST["tipus"];
+      $limit = "Producte = '".$tipusF."'";
     }
 
-    if($_POST['genere']){
-      $genere = $_POST['genere'];
+    if(empty($_POST['genere'])){
+      $limit1 = "Genere = Genere";
+    }else {
+
+      $genereF = $_POST['genere'];
+      $limit1 = "Genere = '".$genereF."'";
     }
 
-    if($_POST['talla']){
-      $talla = $_POST['talla'];
+    if(empty($_POST['talla'])){
+      $limit2 = "Talla = Talla";
+    }else {
+
+      $tallaF = $_POST['talla'];
+      $limit2 = "Talla = '".$tallaF."'";
     }
 
-    if($_POST['color']){
-      $color = $_POST['color'];
+    if(empty($_POST['color'])){
+      $limit3 = "Color = Color";
+    } else {
+
+      $colorF = $_POST['color'];
+      $limit3 = "Color = '".$colorF."'";
     }
 
  ?>
 
-  <div class="main">
+  <div class="main" id="productes">
     <h1 class="form-title">P<span class="titol">roductes</span></h1>
-    <table>
-      <tr>
+    <table id="resultat">
+      <tr class="tr">
         <th>Producte</th>
         <th>Nom</th>
         <th>Genere</th>
@@ -162,17 +186,18 @@ $tipus = 'Producte';
         <th>Color</th>
         <th>Preu</th>
         <th>Stock</th>
+        <th>Acció</th>
       </tr>
 
     <?php
         include_once "db_empresa.php";
 
         $con = mysqli_connect($db_host, $db_user, $db_pass, $db_database);
-        $query = "SELECT * FROM roba where Producte=$tipus and Genere=$genere and Talla=$talla and Color=$color;";
+        $query = "SELECT * FROM roba where $limit and $limit1 and $limit2 and $limit3;";
         $res = mysqli_query($con, $query);
         while ($row = mysqli_fetch_assoc($res)) {
     ?>
-      <tr>
+      <tr class="trr">
         <td><?php echo $row['Producte']; ?></td>
         <td><?php echo $row['Nom']; ?></td>
         <td><?php echo $row['Genere']; ?></td>
@@ -180,6 +205,7 @@ $tipus = 'Producte';
         <td><?php echo $row['Color']; ?></td>
         <td><?php echo $row['Preu']; ?> €</td>
         <td><?php echo $row['Stock']; ?> Unid.</td>
+        <td><a href='Arxius/update/Formulari.php?plate=<?php  ?>'><button class='button99 button98' >Editar</button></a><a href='Arxius/delete/deleteForm.php?plate=<?php  ?>'><button class='button99 button97'>Eliminar</button></a></td>
       </tr>
 
     <?php
@@ -188,12 +214,12 @@ $tipus = 'Producte';
     </table>
     </div>
     <?php
-  }else {
+  }elseif (!isset($_POST['submitFiltre']))  {
     ?>
-    <div class="main">
+    <div class="main" id="productes">
       <h1 class="form-title">P<span class="titol">roductes</span></h1>
-      <table>
-        <tr>
+      <table id="resultat">
+        <tr class="tr">
           <th>Producte</th>
           <th>Nom</th>
           <th>Genere</th>
@@ -201,17 +227,18 @@ $tipus = 'Producte';
           <th>Color</th>
           <th>Preu</th>
           <th>Stock</th>
+          <th>Acció</th>
         </tr>
 
       <?php
           include_once "db_empresa.php";
 
           $con = mysqli_connect($db_host, $db_user, $db_pass, $db_database);
-          $query = "SELECT * FROM roba where Producte=$tipus and Genere=$genere and Talla=$talla and Color=$color;";
+          $query = "SELECT * FROM roba;";
           $res = mysqli_query($con, $query);
           while ($row = mysqli_fetch_assoc($res)) {
       ?>
-        <tr>
+        <tr class="trr">
           <td><?php echo $row['Producte']; ?></td>
           <td><?php echo $row['Nom']; ?></td>
           <td><?php echo $row['Genere']; ?></td>
@@ -219,6 +246,7 @@ $tipus = 'Producte';
           <td><?php echo $row['Color']; ?></td>
           <td><?php echo $row['Preu']; ?> €</td>
           <td><?php echo $row['Stock']; ?> Unid.</td>
+          <td><a href='Arxius/update/Formulari.php?plate=<?php  ?>'><button class='button99 button98' >Editar</button></a><a href='deleteAdmin.php?delete=<?php echo $row['ID']; ?>'><button class='button99 button97'>Eliminar</button></a></td>
         </tr>
 
       <?php
@@ -234,7 +262,16 @@ $tipus = 'Producte';
   </div>
   <div class="right"></div>
 </div>
-
+<div>
+  <div class="comentaris">
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+    <img src="../imatges/logo1.png" width="50%"><img src="../imatges/logo1.png" width="50%">
+  </div>
+  <div class="right"></div>
+</div>
 <div class="footer">© 2020 - 2021 - NIMA, SL</div>
 
 </body>
