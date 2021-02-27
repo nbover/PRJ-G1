@@ -124,41 +124,33 @@ if ($existent=='existeix') {
           <input type="text" name="color" style="max-width: 15%;">
         <button type="submit" name="submitFiltre" class="button2">Filtrar</button>
       </form>
+      </div>
 <?php
 
+$color = 'Color';
+$talla = 'Talla';
+$genere = 'Genere';
+$tipus = 'Producte';
+
   if(isset($_POST['submitFiltre'])){
-    if(isset($_POST['tipus'])){
+    if($_POST['tipus']){
       $tipus = $_POST['tipus'];
     }
-    else{
-      $tipus = 'Producte';
-    }
-    if(isset($_POST['genere'])){
+
+    if($_POST['genere']){
       $genere = $_POST['genere'];
     }
-    else {
-      $genere = 'Genere';
-    }
-    if(isset($_POST['talla'])){
+
+    if($_POST['talla']){
       $talla = $_POST['talla'];
     }
-    else {
-      $talla = 'Talla';
-    }
-    if(isset($_POST['color'])){
+
+    if($_POST['color']){
       $color = $_POST['color'];
     }
-    else {
-      $color = 'Color';
-    }
-
-
-
-
-
 
  ?>
-  </div>
+
   <div class="main">
     <h1 class="form-title">P<span class="titol">roductes</span></h1>
     <table>
@@ -176,7 +168,7 @@ if ($existent=='existeix') {
         include_once "db_empresa.php";
 
         $con = mysqli_connect($db_host, $db_user, $db_pass, $db_database);
-        $query = "SELECT * FROM roba where Producte = $tipus and Genere = $genere and Talla = $talla and Color = $color;";
+        $query = "SELECT * FROM roba where Producte=$tipus and Genere=$genere and Talla=$talla and Color=$color;";
         $res = mysqli_query($con, $query);
         while ($row = mysqli_fetch_assoc($res)) {
     ?>
@@ -189,12 +181,56 @@ if ($existent=='existeix') {
         <td><?php echo $row['Preu']; ?> €</td>
         <td><?php echo $row['Stock']; ?> Unid.</td>
       </tr>
-    </table>
+
     <?php
         }
-      }
+      ?>
+    </table>
+    </div>
+    <?php
+  }else {
+    ?>
+    <div class="main">
+      <h1 class="form-title">P<span class="titol">roductes</span></h1>
+      <table>
+        <tr>
+          <th>Producte</th>
+          <th>Nom</th>
+          <th>Genere</th>
+          <th>Talla</th>
+          <th>Color</th>
+          <th>Preu</th>
+          <th>Stock</th>
+        </tr>
+
+      <?php
+          include_once "db_empresa.php";
+
+          $con = mysqli_connect($db_host, $db_user, $db_pass, $db_database);
+          $query = "SELECT * FROM roba where Producte=$tipus and Genere=$genere and Talla=$talla and Color=$color;";
+          $res = mysqli_query($con, $query);
+          while ($row = mysqli_fetch_assoc($res)) {
+      ?>
+        <tr>
+          <td><?php echo $row['Producte']; ?></td>
+          <td><?php echo $row['Nom']; ?></td>
+          <td><?php echo $row['Genere']; ?></td>
+          <td><?php echo $row['Talla']; ?></td>
+          <td><?php echo $row['Color']; ?></td>
+          <td><?php echo $row['Preu']; ?> €</td>
+          <td><?php echo $row['Stock']; ?> Unid.</td>
+        </tr>
+
+      <?php
+          }
+        ?>
+      </table>
+      </div>
+      <?php
+  }
     ?>
 
+    </table>
   </div>
   <div class="right"></div>
 </div>
