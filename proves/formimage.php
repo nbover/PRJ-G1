@@ -10,10 +10,18 @@
         <div class="row">
             <div class="col-12">
                 <?php
-                if (isset($_REQUEST['guardar'])) {
-                    if (isset($_FILES['foto']['name'])) {
+                if (isset($_POST['submit'])) {
+                        $tipus = $_POST['tipus'];
+                        $nom = $_POST['nom'];
+                        $genere = $_POST['genere'];
+                        $talla = $_POST['talla'];
+                        $color = $_POST['color'];
+                        $preu = $_POST['preu'];
+                        $stock = $_POST['stock'];
                         $tipoArchivo = $_FILES['foto']['type'];
+
                         $permitido=array("image/png","image/jpeg");
+
                         //if per comprovar que es format de sa imatge sigui un d'aquells 2
                         if( in_array($tipoArchivo,$permitido) ==false ){
                             die("Archivo no permitido");
@@ -27,17 +35,48 @@
                         $con = mysqli_connect($db_host, $db_user, $db_pass, $db_database);
                         $binariosImagen = mysqli_escape_string($con, $binariosImagen);
                         //query
-                        $query = "INSERT INTO roba (imatge,tipoimatge) values ('" . $binariosImagen . "','" . $tipoArchivo . "');";
+                        $query = "INSERT INTO roba (Producte,Nom,Genere,Talla,Color,Preu,Stock,imatge,tipoimatge) values
+                        ('$tipus','$nom','$genere','$talla','$color',$preu,$stock,'" . $binariosImagen . "','" . $tipoArchivo . "');";
+                        /* ('" . $binariosImagen . "','" . $tipoArchivo . "');";*/
                         $res = mysqli_query($con, $query);
-                    }
+
                 }
                 ?>
-                <form method="post" enctype="multipart/form-data">
+                <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
+                  <div class="form-group">
+                      <label class="label" for="">Tipus de producte</label>
+                      <input type="text" name="tipus" required>
+                  </div>
+                  <div class="form-group">
+                      <label class="label" for="">Nom Comercial</label>
+                      <input type="text" name="nom" required>
+                  </div>
+                  <div class="form-group">
+                      <label class="label" for="">Genere</label>
+                      <input type="text" name="genere" required>
+                  </div>
+                  <div class="form-group">
+                      <label class="label" for="">Talla</label>
+                      <input type="text" name="talla" required>
+                  </div>
+                  <div class="form-group">
+                      <label class="label" for="">Color</label>
+                      <input type="text" name="color" required>
+                  </div>
+                  <div class="form-group">
+                      <label class="label" for="">Preu</label>
+                      <input type="number" name="preu" step="any" required>
+                  </div>
+                  <div class="form-group">
+                      <label class="label" for="">Stock</label>
+                      <input type="number" name="stock" required>
+                  </div>
                     <div class="form-group">
-                        <input type="file" name="foto">
+                        <label class="label" for="">Imatge</label>
+                        <input type="file" name="foto" required>
                     </div>
                     <div class="form-group">
-                        <button type="submit" name="guardar">Enviar</button>
+                        <button type="submit" name="submit">Enviar</button>
                     </div>
                 </form>
             </div>

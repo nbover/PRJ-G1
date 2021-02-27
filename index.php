@@ -47,6 +47,11 @@ $_SESSION['usuari_login2']=null;
             <img src="imatges/UsuarioNuevo.png">
           </a></div>
 
+          <div class="carousel-item"><a href="">
+            <p class="Tusuario">Creadors</p>
+            <img src="imatges/Creadors.png">
+          </a></div>
+
           <div class="carousel-item"><a href="php/FormIniciUsuari.php">
             <p class="Tusuario">Usuari Registrat</p>
             <img src="imatges/UsuarioV.png">
@@ -67,6 +72,6 @@ $_SESSION['usuari_login2']=null;
 <div class="footer">© 2020 - 2021 - NIMA, SL</div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="js/CarrUsuario.js"></script>
+  <script src="js/CarrUsuario2.js"></script>
 </body>
 </html>
