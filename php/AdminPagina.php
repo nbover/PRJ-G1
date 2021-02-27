@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
 
                   //if per comprovar que es format de sa imatge sigui un d'aquells 2
                   if( in_array($tipoArchivo,$permitido) ==false ){
-                      die("Archivo no permitido");
+                      die("Archivo no permitido.");
                   }
                   //format imatge per crear es binari dins una variable
                   $tamanoArchivo = $_FILES['foto']['size'];
