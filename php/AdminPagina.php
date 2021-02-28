@@ -303,7 +303,7 @@ if ($existent=='existeix') {
   </div>
 </div>
 
-<div class="footer">© 2020 - 2021 - NIMA, SL</div>
+<div class="footer" style="margin-left:42%">© 2020 - 2021 - NIMA, SL</div>
 
 </body>
 </html>
