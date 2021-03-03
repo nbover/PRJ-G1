@@ -14,7 +14,7 @@ public function setSurname($surname)
 $this->surname=$surname;
 }
 
-public function setDni($edat)
+public function setEdat($edat)
 {
 $this->edat=$edat;
 }
@@ -29,7 +29,7 @@ public function getSurname()
   return $this->surname;
 }
 
-public function getDni()
+public function getEdat()
 {
   return $this->edat;
 }
@@ -47,5 +47,11 @@ public function print()
   echo "$this->surname<br>";
   echo "$this->edat<br>";
 }
+
+protected function oneYearOlder()
+  {
+    $this->edat=++$this->edat;
+  }
+
 }
 ?>
