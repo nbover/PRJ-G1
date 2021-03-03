@@ -26,6 +26,16 @@ $marti=new Creador($row['NomAdmin'],$row['Surname'],$row['Edat'],$row['Correu'])
 echo $marti->print();
 }
 
-?></h3>
+?>
+</h3>
+<?php
+$checksum = crc32("marti");
+printf("%u\n", $checksum);
+
+echo "<br><br>";
+$str = "marti";
+echo md5($str);
+
+?>
 </body>
 </html>
