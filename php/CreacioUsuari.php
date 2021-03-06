@@ -68,7 +68,7 @@
 				<div class="form-general">
 					<h1 class="form-title">I<span class="titol">nfo </span>D<span class="titol">el </span>R<span class="titol">egistre</span></h1>
           <div style="text-align: center;font-size:20px;">
-            <br><p style="color: red;">XXXXXXXXXXXXXXXXXXXXX </p><p>L'Usuari <b><?php echo $user ?></b> ja existeix. <p style="color: red;">XXXXXXXXXXXXXXXXXXXXX </p><br> 
+            <br><p style="color: red;">XXXXXXXXXXXXXXXXXXXXX </p><p>L'Usuari <b><?php echo $user ?></b> ja existeix. <p style="color: red;">XXXXXXXXXXXXXXXXXXXXX </p><br>
         </div>
         <button type="submit">Retornar al Formulari</button>
        </div>
@@ -83,7 +83,8 @@
   				<h1 class="form-title">I<span class="titol">nfo </span>D<span class="titol">el </span>R<span class="titol">egistre</span></h1>
           <div style="text-align: center;font-size:20px;">
           <?php
-          $query = "INSERT INTO usuaris (Usuari,Password,Nom,Llinatges,Email,DataN,Sexe) values ('$user','$pwd1','$nom','$llinatges2','$correu','$data','$gender');";
+          $md5=md5($pwd1);
+          $query = "INSERT INTO usuaris (Usuari,Password,Nom,Llinatges,Email,DataN,Sexe) values ('$user','$md5','$nom','$llinatges2','$correu','$data','$gender');";
           $res = mysqli_query($con, $query);
 
           echo "<br><br><b>Benvingut a NIMA<br></b>";

@@ -5,6 +5,7 @@
 
     $user = $_POST['user'];
     $pw = $_POST['password'];
+    $md5=md5($pw);
 
     include_once "db_empresa.php";
 
@@ -28,7 +29,7 @@ error_reporting(E_ALL ^ E_NOTICE);
       alert("El Usuari introduït no existeix");
       </script>';
 
-    }elseif ($var2 !== $pw) {
+    }elseif ($var2 !== $md5) {
       echo '<script type="text/javascript">
       alert("La contrasenya no concideix amb el usuari introduït");
       </script>';

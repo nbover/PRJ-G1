@@ -32,8 +32,13 @@ echo $marti->print();
 $checksum = crc32("marti");
 printf("%u\n", $checksum);
 
-echo "<br><br>";
-$str = "marti";
+echo "<br>Nico<br>";
+$str = "von32";
+$juan=md5($str);
+echo $juan;
+
+echo "<br>Marti<br>";
+$str = "1234";
 echo md5($str);
 
 ?>
