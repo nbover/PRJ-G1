@@ -35,6 +35,20 @@ if (isset($_POST['submit'])) {
 
           }
  ?>
+ <?php
+if (isset($_POST['submitDelComentari'])){
+
+  $id = $_POST['submitDelComentari'];
+
+  include_once "db_empresa.php";
+  $con = mysqli_connect($db_host, $db_user, $db_pass, $db_database);
+  $query = "delete from comentaris where ID = $id;";
+  $res = mysqli_query($con, $query);
+
+
+
+}
+?>
 <?php
 session_start();
 $existent=$_SESSION['usuari_login'];
@@ -54,7 +68,7 @@ if ($existent=='existeix') {
   <link rel="shortcut icon" href="../imatges/logoicon.ico">
   <title>Nima Deports</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="..\css\CssAdminPagina.css">
+  <link rel="stylesheet" type="text/css" href="..\css\CssAdminPagina1.css">
 
 </head>
 <body>
@@ -130,7 +144,12 @@ if ($existent=='existeix') {
           <label  for="">Talla</label>
           <input type="text" name="talla" style="max-width: 15%;">
           <label  for="">Color</label>
-          <input type="text" name="color" style="max-width: 15%;">
+          <select  name="color" style="width: 15%;">
+            <option value=""></option>
+            <option value="Blanc">Blanc</option>
+            <option value="Negre">Negre</option>
+            <option value="Gris">Gris</option>
+          </select>
         <button type="submit" name="submitFiltre" class="button2">Filtrar</button>
       </form>
       </div>
@@ -263,12 +282,34 @@ if ($existent=='existeix') {
   <div class="right"></div>
 </div>
 <div>
-  <div class="comentaris">
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-    <img src="../imatges/logo1.png" width="50%"><img src="../imatges/logo1.png" width="50%">
+  <div class="comentaris" id="comentaris">
+    <h3 class="form-title">C<span class="titol">omentari</span></h3>
+    <table id="resultat">
+      <tr class="tr">
+        <th>Usuari</th>
+        <th>Comentari</th>
+        <th>Data</th>
+        <th>Acció</th>
+      </tr>
+      <?php
+          include_once "db_empresa.php";
+
+          $con = mysqli_connect($db_host, $db_user, $db_pass, $db_database);
+          $query = "SELECT * FROM comentaris;";
+          $res = mysqli_query($con, $query);
+          while ($row = mysqli_fetch_assoc($res)) {
+      ?>
+        <tr class="trr">
+          <td><?php echo $row['Usuari']; ?></td>
+          <td><?php echo $row['Comentari']; ?></td>
+          <td><?php echo $row['Fecha']; ?></td>
+          <td><form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"  ><button type="submit" name="submitDelComentari" value="<?php echo $row['ID']; ?>" class='button99 button97'>Eliminar</button></td>
+        </tr>
+
+      <?php
+          }
+        ?>
+      </table>
   </div>
   <div class="right"></div>
 </div>

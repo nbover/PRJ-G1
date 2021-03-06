@@ -132,6 +132,11 @@ h4{
   text-align: left;
   color: #B06AB3;
 }
+h3{
+  text-align: left;
+  color: #B06AB3;
+  padding-top: 10px;
+}
 .titol{
   color: black;
 }
@@ -326,5 +331,10 @@ border-radius: 25px;
 
 #productes{
   height: 739px;
+  overflow: auto;
+}
+
+#comentaris{
+  height: 400px;
   overflow: auto;
 }

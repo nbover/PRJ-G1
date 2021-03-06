@@ -5,7 +5,7 @@
   <link rel="shortcut icon" href="../imatges/logoicon.ico">
   <title>Nima Deports</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <script src="https://kit.fontawesome.com/efe0365769.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="..\css\CssNoUsuarisPagina.css">
 </head>
 <body>
@@ -35,7 +35,12 @@
           <label  for="">Talla</label>
           <input type="text" name="talla" style="max-width: 15%;">
           <label  for="">Color</label>
-          <input type="text" name="color" style="max-width: 15%;">
+          <select  name="color" style="width: 15%;">
+            <option value=""></option>
+            <option value="Blanc">Blanc</option>
+            <option value="Negre">Negre</option>
+            <option value="Gris">Gris</option>
+          </select>
         <button type="submit" name="submitFiltre" class="button2">Filtrar</button>
       </form>
       </div>
@@ -77,23 +82,110 @@
                   $colorF = $_POST['color'];
                   $limit3 = "Color = '".$colorF."'";
                 }
-       }
-   ?>
+      ?>
+      <div class="grid" >
+        <h1 class="form-title">P<span class="titol">roductes</span></h1>
 
-  <div class="main">
-    <h2>Lorum Ipsum</h2>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-    <img src="../imatges/logo1.png" width="50%"><img src="../imatges/logo1.png" width="50%">
-  </div>
+        <?php
+
+
+            include_once "db_empresa.php";
+
+            $con = mysqli_connect($db_host, $db_user, $db_pass, $db_database);
+            $query = "SELECT * FROM roba where $limit and $limit1 and $limit2 and $limit3;";
+            $res = mysqli_query($con, $query);
+            while ($row = mysqli_fetch_assoc($res)) {
+        ?>
+        <div class="item" id="item" data-descripcion="<?php echo $row['Nom'];?> <?php echo $row['Preu']; ?> €">
+          <div class="item-contenido" id="item">
+            <img width="200" src="data:<?php echo $row['tipoimatge']; ?>;base64,<?php echo  base64_encode($row['imatge']); ?>">
+          </div>
+          </div>
+        <?php
+            }
+          ?>
+
+      </div>
+    </div>
+    <?php
+    include_once "db_empresa.php";
+
+    $con = mysqli_connect($db_host, $db_user, $db_pass, $db_database);
+    $query = "SELECT * FROM roba;";
+    $res = mysqli_query($con, $query);
+    while ($row = mysqli_fetch_assoc($res)) {
+     ?>
+     <div class="overlay" id="overlay">
+       <div class="contenedor-img">
+         <button id="btn-cerrar-popup"><i class="fas fa-times"></i></button>
+         <img width="200" src="">
+         <p class="descripcion"></p>
+       </div>
+     </div>
+     <?php
+     }
+       ?>
+    <div class="footer">© 2020 - 2021 - NIMA, SL</div>
+
+      <?php
+      }elseif (!isset($_POST['submitFiltre']))  {
+       ?>
+
+
+
+      <div class="grid" >
+        <h1 class="form-title">P<span class="titol">roductes</span></h1>
+
+        <?php
+
+
+            include_once "db_empresa.php";
+
+            $con = mysqli_connect($db_host, $db_user, $db_pass, $db_database);
+            $query = "SELECT * FROM roba;";
+            $res = mysqli_query($con, $query);
+            while ($row = mysqli_fetch_assoc($res)) {
+        ?>
+        <div class="item" id="item" data-descripcion="<?php echo $row['Nom'];?> <?php echo $row['Preu']; ?> €">
+          <div class="item-contenido" id="item">
+            <img width="200" src="data:<?php echo $row['tipoimatge']; ?>;base64,<?php echo  base64_encode($row['imatge']); ?>">
+          </div>
+        </div>
+
+    <?php
+        }
+
+      ?>
+
+
+
+    </div>
 </div>
+<?php
+include_once "db_empresa.php";
 
+$con = mysqli_connect($db_host, $db_user, $db_pass, $db_database);
+$query = "SELECT * FROM roba;";
+$res = mysqli_query($con, $query);
+while ($row = mysqli_fetch_assoc($res)) {
+ ?>
+ <div class="overlay" id="overlay">
+   <div class="contenedor-img">
+     <button id="btn-cerrar-popup"><i class="fas fa-times"></i></button>
+     <img width="200" src="">
+     <p class="descripcion"></p>
+   </div>
+ </div>
+ <?php
+ }
+   ?>
 <div class="footer">© 2020 - 2021 - NIMA, SL</div>
+<?php
+}
+  ?>
 
+<script src="https://cdn.jsdelivr.net/npm/muuri@0.9.3/dist/muuri.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations.min.js"></script>
+<script src="../js/UsuarioNoReg.js"></script>
 </body>
 </html>

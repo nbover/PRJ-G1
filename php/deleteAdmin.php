@@ -25,7 +25,7 @@ if ($existent=='existeix') {
     <link rel="shortcut icon" href="../imatges/logoicon.ico">
     <title>Nima Deports</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="..\css\CssAdminPagina2.css">
+    <link rel="stylesheet" type="text/css" href="..\css\CssAdminPaginaDelete.css">
 
   </head>
   <body>
@@ -107,7 +107,7 @@ if ($existent=='existeix') {
           echo "<tr><th></th><th>Acció</th></tr>";
 
           echo "<tr>";
-          echo "<td>Has eliminat el vehicle de la base de dades</td>";
+          echo "<td>Has eliminat el producte de la base de dades</td>";
           echo "<td><a href='AdminPagina.php'><button class='button button1' >Retornar</button></a></td>";
           echo "</tr>";
 
