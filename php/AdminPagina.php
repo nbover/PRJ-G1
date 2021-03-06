@@ -54,7 +54,7 @@ if ($existent=='existeix') {
   <link rel="shortcut icon" href="../imatges/logoicon.ico">
   <title>Nima Deports</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="..\css\CssAdminPagina2.css">
+  <link rel="stylesheet" type="text/css" href="..\css\CssAdminPagina.css">
 
 </head>
 <body>
@@ -205,7 +205,7 @@ if ($existent=='existeix') {
         <td><?php echo $row['Color']; ?></td>
         <td><?php echo $row['Preu']; ?> €</td>
         <td><?php echo $row['Stock']; ?> Unid.</td>
-        <td><a href='Arxius/update/Formulari.php?plate=<?php  ?>'><button class='button99 button98' >Editar</button></a><a href='Arxius/delete/deleteForm.php?plate=<?php  ?>'><button class='button99 button97'>Eliminar</button></a></td>
+        <td><a href='updateAdmin.php?update=<?php echo $row['ID']; ?>'><button class='button99 button98' >Editar</button></a><a href='deleteAdmin.php?delete=<?php echo $row['ID']; ?>'><button class='button99 button97'>Eliminar</button></a></td>
       </tr>
 
     <?php
@@ -246,7 +246,7 @@ if ($existent=='existeix') {
           <td><?php echo $row['Color']; ?></td>
           <td><?php echo $row['Preu']; ?> €</td>
           <td><?php echo $row['Stock']; ?> Unid.</td>
-          <td><a href='Arxius/update/Formulari.php?plate=<?php  ?>'><button class='button99 button98' >Editar</button></a><a href='deleteAdmin.php?delete=<?php echo $row['ID']; ?>'><button class='button99 button97'>Eliminar</button></a></td>
+          <td><a href='updateAdmin.php?update=<?php echo $row['ID']; ?>'><button class='button99 button98' >Editar</button></a><a href='deleteAdmin.php?delete=<?php echo $row['ID']; ?>'><button class='button99 button97'>Eliminar</button></a></td>
         </tr>
 
       <?php

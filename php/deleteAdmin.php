@@ -31,7 +31,7 @@ if ($existent=='existeix') {
   <body>
 
   <div style="padding:15px;text-align:center;">
-    <a href=""><img style="margin-left:-5%;" src="../imatges/logo1.png" width="200px"></a><h1 style="color:white;"><span class="linia">Administració productes</span></h1>
+    <a href="AdminPagina.php"><img style="margin-left:-5%;" src="../imatges/logo1.png" width="200px"></a><h1 style="color:white;"><span class="linia">Administració productes</span></h1>
   </div>
 
   <div>
@@ -47,7 +47,7 @@ if ($existent=='existeix') {
       </form>
     </div>
 
-    <div class="main" style="height:27%">
+    <div class="main" style="height:31%">
 
         <h4 class="form-title" style="font-size:135%">R<span class="titol">esultat</span></h4>
         <?php
