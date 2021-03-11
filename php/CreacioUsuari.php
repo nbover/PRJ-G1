@@ -1,4 +1,5 @@
 <?php
+      //pagina del resultat de la creacio d'usuari
       if ($_POST)
       {
       $user="$_POST[user]";
@@ -30,6 +31,7 @@
 
       $query_select = "select * from usuaris where Usuari = '$user'";
       $result_select = $con->query($query_select);
+      //comprova que l'usuari existeix
       $usuari_existent = $result_select->fetch_object();
 
 
@@ -61,6 +63,7 @@
 
   </div>
   <?php
+    //si existeix ens mostra aixo:
     if($usuari_existent != null){
    ?>
     <div class="contenedor">
@@ -83,6 +86,7 @@
   				<h1 class="form-title">I<span class="titol">nfo </span>D<span class="titol">el </span>R<span class="titol">egistre</span></h1>
           <div style="text-align: center;font-size:20px;">
           <?php
+          //convertim password introduit en md5 
           $md5=md5($pwd1);
           $query = "INSERT INTO usuaris (Usuari,Password,Nom,Llinatges,Email,DataN,Sexe) values ('$user','$md5','$nom','$llinatges2','$correu','$data','$gender');";
           $res = mysqli_query($con, $query);

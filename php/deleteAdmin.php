@@ -1,5 +1,5 @@
 <?php
-
+//pàgina per eliminar productes
 
 if(!empty($_GET['delete'])){
        $id=$_GET["delete"];
@@ -7,14 +7,14 @@ if(!empty($_GET['delete'])){
 if(!empty($_GET["id"])){
      $id=$_GET["id"];
    }
-
+   //obtenim les variables de sessió de l'usuari admin
    session_start();
    $existent=$_SESSION['usuari_login'];
 
    if (isset($_SESSION['user'])) {
      $user=$_SESSION['user'];
    }
-
+//si tenim la variable de sessio de que hem accedir correctament , mostra aixo:
 if ($existent=='existeix') {
   echo '<a href="../index.php"><button class="button2"><b>Log Out <img src="../imatges/logout.png" width="20px"></b></button></a>';
   ?>
@@ -119,6 +119,7 @@ if ($existent=='existeix') {
   </body>
   </html>
   <?php
+  //si no existeix l'usuari logueat mostra:
 }else {
   ?>
   <!DOCTYPE html>

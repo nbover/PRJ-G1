@@ -1,4 +1,4 @@
-<?php
+<?php 
 if(!empty($_GET['update'])){
        $id=$_GET["update"];
      }

@@ -1,4 +1,5 @@
 <?php
+//clase creador que de pare té person
 class Creador extends Person
 {
 //propietat

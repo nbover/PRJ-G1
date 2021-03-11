@@ -1,4 +1,5 @@
 <?php
+//clase person
 class Person
 {
 public $name;

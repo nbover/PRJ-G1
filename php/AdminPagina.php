@@ -50,6 +50,7 @@ if (isset($_POST['submitDelComentari'])){
 }
 ?>
 <?php
+//Variables de sessió de l'admin
 session_start();
 $existent=$_SESSION['usuari_login'];
 
@@ -57,7 +58,7 @@ if (isset($_SESSION['user'])) {
   $user=$_SESSION['user'];
 }
 
-
+//si tenim la variable de sessió que es fa quan iniciam sessió mostra aixo:
 if ($existent=='existeix') {
   echo '<a href="../index.php"><button class="button2"><b>Log Out <img src="../imatges/logout.png" width="20px"></b></button></a>';
 ?>
@@ -86,7 +87,7 @@ if ($existent=='existeix') {
 			<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data" class="form">
 				<div class="form-general">
 					<h1 class="form-title">C<span class="titol">reació </span>D<span class="titol">el </span>P<span class="titol">roducte</span></h1>
-
+          <!-- Formulari crear producte -->
           <div class="grupo">
     				<input type="text" name="tipus" required><span class="barra"></span>
             <label class="label" for="">Tipus de producte</label>
@@ -125,7 +126,7 @@ if ($existent=='existeix') {
     </div>
 
   <div class="main">
-
+    <!--Formulari filtre de productes -->
       <h4 class="form-title">F<span class="titol">iltre</span></h4>
       <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"  >
           <label  for="">Producte</label>
@@ -158,7 +159,7 @@ if ($existent=='existeix') {
 
 
 
-
+//perque funcioni el filtre juntament amb mysql
   if(isset($_POST['submitFiltre'])){
     if(empty($_POST['tipus'])){
       $limit = "Producte = Producte";
@@ -193,7 +194,7 @@ if ($existent=='existeix') {
     }
 
  ?>
-
+ <!-- Llistat de productes mitjançant select -->
   <div class="main" id="productes">
     <h1 class="form-title">P<span class="titol">roductes</span></h1>
     <table id="resultat">
@@ -224,6 +225,7 @@ if ($existent=='existeix') {
         <td><?php echo $row['Color']; ?></td>
         <td><?php echo $row['Preu']; ?> €</td>
         <td><?php echo $row['Stock']; ?> Unid.</td>
+        <!-- Botons per editar i eliminar productes -->
         <td><a href='updateAdmin.php?update=<?php echo $row['ID']; ?>'><button class='button99 button98' >Editar</button></a><a href='deleteAdmin.php?delete=<?php echo $row['ID']; ?>'><button class='button99 button97'>Eliminar</button></a></td>
       </tr>
 
@@ -293,7 +295,7 @@ if ($existent=='existeix') {
       </tr>
       <?php
           include_once "db_empresa.php";
-
+          //llistat de comentaris d'usuaris
           $con = mysqli_connect($db_host, $db_user, $db_pass, $db_database);
           $query = "SELECT * FROM comentaris;";
           $res = mysqli_query($con, $query);

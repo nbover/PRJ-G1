@@ -82,6 +82,7 @@
 <div class="footer">© 2020 - 2021 - NIMA, SL</div>
 
 <script>
+//funció per mostrar password visible
   function mostrarContrasena(){
       var tipo = document.getElementById("password");
       if(tipo.type == "password"){

@@ -49,7 +49,7 @@
 
 
 
-
+ //perque funcioni filtrar productes
         if(isset($_POST['submitFiltre'])){
                 if(empty($_POST['tipus'])){
                   $limit = "Producte = Producte";
@@ -98,6 +98,7 @@
         ?>
         <div class="item" id="item" data-descripcion="<?php echo $row['Nom'];?> <?php echo $row['Preu']; ?> €">
           <div class="item-contenido" id="item">
+            <!-- Mostrar imatge de la base de dades-->
             <img width="200" src="data:<?php echo $row['tipoimatge']; ?>;base64,<?php echo  base64_encode($row['imatge']); ?>">
           </div>
           </div>

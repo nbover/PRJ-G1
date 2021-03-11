@@ -1,5 +1,5 @@
 <?php
-
+//pagini d'inici admin
   if(isset($_POST['submit']))
   {
 
@@ -23,17 +23,18 @@
 
     }
 error_reporting(E_ALL ^ E_NOTICE);
-
+    //si l'usuari no existeix:
     if($var !== $user){
       echo '<script type="text/javascript">
       alert("El Usuari introduït no existeix");
       </script>';
-
+      //si l'usuari no te la password inserida:
     }elseif ($var2 !== $md5) {
       echo '<script type="text/javascript">
       alert("La contrasenya no concideix amb el usuari introduït");
       </script>';
     }else{
+      //si has iniciat correctament, publica unes sessions i et redirigeix cap a una pagina.
       session_start();
       $_SESSION['usuari_login'] = "existeix";
       $_SESSION['user'] = $user;

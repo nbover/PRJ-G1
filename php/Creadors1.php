@@ -28,6 +28,7 @@
           <div class="card-body">
             <h4 class="form-title">C<span class="titol">reador</span></h4>
               <?php
+              //mitjançant uns selects, cridam l'objecte
               $query = "select * from administradors where UsuariAdmin='mbusquets';";
               $res = mysqli_query($con, $query);
               while ($row = mysqli_fetch_assoc($res)) {

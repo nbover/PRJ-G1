@@ -1,5 +1,6 @@
 
 <?php
+//variable de sessio si hem iniciat amb usuari
 session_start();
 $existent=$_SESSION['usuari_login2'];
 

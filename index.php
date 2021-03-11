@@ -27,7 +27,7 @@ $_SESSION['usuari_login2']=null;
     <a href="#">Link 4</a>-->
 
   </div>
-
+  <!-- Carrusel java, on tenim tots els apartats -->
   <div class="container">
     <div class="row">
       <div class="col s12">
@@ -72,6 +72,7 @@ $_SESSION['usuari_login2']=null;
 <div class="footer">© 2020 - 2021 - NIMA, SL</div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- arxiu javascript -->
   <script src="js/CarrUsuario2.js"></script>
 </body>
 </html>
